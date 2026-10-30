@@ -52,9 +52,9 @@ Requer **macOS 14 Sonoma** ou mais novo.
 
 Segurança não é opção escondida em "Avançado". É o padrão.
 
-- **Certificado validado pelo macOS.** A cadeia do servidor é avaliada pelo Security framework, com as raízes de confiança do sistema e do seu Keychain, e com checagem do nome do host. Certificado errado é recusado.
+- **Certificado validado pelo macOS.** A cadeia do servidor é avaliada pelo Security framework, com as raízes de confiança do sistema e do seu Keychain, e com checagem do nome do host. Certificado errado é recusado. Se o macOS não reconhecer o certificado (autoassinado, comum em hospedagem), o FDP mostra nome, emissor, validade e impressão digital SHA-256 e deixa você confiar **naquele certificado específico**; se o servidor trocar de certificado, avisa de novo. Não existe "ignorar verificação".
 - **Canal de dados retoma a sessão TLS do canal de controle**, como os servidores FTPS exigem. É a prova de que quem recebe o arquivo é o mesmo cliente que logou.
-- **O app só conecta no host que você digitou.** Nunca em um endereço anunciado pelo servidor (modo passivo via `EPSV`, nunca `PASV`).
+- **O app só conecta no host que você digitou.** Nunca em um endereço anunciado pelo servidor: no modo passivo (`EPSV`, ou `PASV` quando o servidor não aceita `EPSV`) só a porta da resposta é usada.
 - **Senha nunca vai para arquivo.** Só para o Keychain, só se você pedir, e só sai de lá com Touch ID ou a senha do Mac.
 - **Nada é sobrescrito nem apagado sem confirmação.** Download grava em arquivo temporário e só assume o nome final no fim: nunca sobra arquivo pela metade.
 - **Timeout em toda espera de rede.** Servidor mudo não trava o app.
@@ -76,7 +76,7 @@ Segurança não é opção escondida em "Avançado". É o padrão.
 - [x] Dois painéis, arrastar e soltar, fila de transferências
 - [x] Favoritos com Keychain e Touch ID
 - [x] Nova pasta, renomear, apagar
-- [ ] Confiar em certificado autoassinado por servidor
+- [x] Confiar em certificado autoassinado por servidor
 - [ ] Transferir pastas inteiras
 - [ ] Arrastar do servidor para o Finder
 - [ ] Retomar transferência interrompida
