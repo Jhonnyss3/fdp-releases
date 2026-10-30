@@ -21,16 +21,24 @@
 
 Aqui são **dois painéis lado a lado, estilo Finder**: o seu Mac de um lado, o servidor do outro, cada um identificado por nome, ícone e cor. Arrasta de um pro outro e pronto.
 
+<p align="center">
+  <img src="assets/screenshot.png" alt="Janela do FDP: Este Mac à esquerda, servidor à direita, painel de transferências e barra de status com TLS 1.3." width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/connect.png" alt="Folha de conexão do FDP: favoritos à esquerda, três campos, Avançado recolhido e escudo verde de TLS." width="100%">
+</p>
+
 ## Instalação
 
 1. Baixe o `.dmg` em [Releases](../../releases/latest).
 2. Abra e arraste o **FDP** para a pasta **Aplicativos**.
-3. Na primeira abertura, clique com o **botão direito** no FDP e escolha **Abrir**. Confirme.
+3. Na primeira abertura o macOS avisa que não pôde verificar o app. Clique em **OK**, abra **Ajustes do Sistema**, **Privacidade e Segurança**, role até o fim e clique em **Abrir Mesmo Assim**. Só precisa fazer uma vez.
 
 <details>
 <summary>Por que o macOS avisa "desenvolvedor não identificado"?</summary>
 <br>
-O FDP é assinado localmente, sem conta de desenvolvedor Apple. O macOS mostra o aviso para qualquer app assim. O "botão direito, Abrir" só precisa ser feito uma vez; depois o app abre normalmente. Se preferir, libere em Ajustes do Sistema, Privacidade e Segurança, logo após a primeira tentativa de abrir.
+O FDP é assinado localmente, sem conta de desenvolvedor Apple. O macOS mostra o aviso para qualquer app assim. No macOS 14 Sonoma, o atalho de clicar com o botão direito no FDP e escolher Abrir também funciona; no macOS 15 Sequoia e mais novos, só o caminho pelos Ajustes do Sistema libera o app.
 </details>
 
 Requer **macOS 14 Sonoma** ou mais novo.
@@ -66,7 +74,8 @@ Segurança não é opção escondida em "Avançado". É o padrão.
 |---|---|---|---|
 | vsftpd | `LIST` | 1.3 | Testado |
 | Rebex | `MLSD` | 1.3 | Testado |
-| ProFTPD, Pure-FTPd | `MLSD` | | Deve funcionar; não testado ainda |
+| Pure-FTPd (cPanel) | `MLSD` | 1.3 | Testado |
+| ProFTPD | `MLSD` | | Deve funcionar; não testado ainda |
 | IIS FTP | formato DOS | | Listagem não suportada ainda |
 | SFTP | | | Não é FTP. Não suportado. |
 
@@ -89,7 +98,7 @@ Ferramenta De Protocolo. Ou o que você gritou na última vez que usou um client
 
 ## Código
 
-O FDP é um software **proprietário e gratuito**. O código-fonte não é público. Este repositório existe para distribuir as versões e receber feedback.
+O FDP é um software **proprietário e gratuito** ([licença](LICENSE.md)). O código-fonte não é público. Este repositório existe para distribuir as versões e receber feedback.
 
 Encontrou um problema ou tem uma ideia? Abra uma [issue](../../issues). Informe a versão do FDP, a versão do macOS e, se puder, o servidor FTP que estava usando.
 
